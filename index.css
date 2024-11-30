@@ -9,6 +9,7 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
+    padding-top: 60px; /* To ensure content is not covered by fixed navbar */
 }
 
 /* Navbar Styling */
@@ -21,14 +22,17 @@ body {
     padding: 10px 0;
     z-index: 10;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     gap: 20px;
+    flex-wrap: wrap; /* Allows navbar links to wrap on smaller screens */
 }
 
 #navbar a {
     color: white;
     text-decoration: none;
     font-size: 1.1em;
+    padding: 5px 10px;
 }
 
 #navbar a:hover {
@@ -37,17 +41,20 @@ body {
 
 /* Welcome Section */
 #welcome-section {
-    height: 100vh;  /* Ensure it takes up the full height of the viewport */
+    height: 100vh;
     background-color: #9cb5a9;
     color: white;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 20px;
+    margin-top: 60px; /* To account for the fixed navbar */
 }
 
 #welcome-section h1 {
     font-size: 3em;
+    margin-bottom: 10px;
 }
 
 #welcome-section p {
@@ -107,14 +114,47 @@ body {
     font-size: 1.5em;
 }
 
+/* Certifications Section */
+#certifications {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+#certifications h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+#certifications ul {
+    list-style: none;
+}
+
+#certifications li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Profile Picture */
+.profile-picture {
+    max-width: 400px;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+    border-radius: 50%;
+}
+
 /* Media Queries for Smaller Screens */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     #navbar {
         flex-direction: column;
+        padding-top: 20px;
+        align-items: center; /* Center navbar items on smaller screens */
     }
 
     #navbar a {
-        margin-bottom: 10px;
+        margin-bottom: 10px; /* Add space between links */
+        font-size: 1em; /* Adjust font size for smaller screens */
     }
 
     #welcome-section h1 {
@@ -136,15 +176,59 @@ body {
     .project-tile p {
         font-size: 1em;
     }
+
+    #certifications h2 {
+        font-size: 2em;
+    }
+
+    #certifications li {
+        font-size: 1.1em;
+    }
+
+    .profile-picture {
+        max-width: 90%;
+    }
 }
-img {
-    max-width: 20%;
-    height: auto;
-}
-.profile-picture {
-    max-width: 400px; /* Limit image size */
-    height: auto;
-    margin: 20px auto; /* Center the image horizontally and add top-bottom spacing */
-    display: block; /* Ensures image behaves as a block element */
-    border-radius: 50%; /* Optional: Makes the image circular */
+
+/* Mobile Screen Sizes */
+@media (max-width: 600px) {
+    #navbar {
+        padding-top: 10px;
+    }
+
+    #navbar a {
+        font-size: 1em;
+    }
+
+    #welcome-section h1 {
+        font-size: 2em;
+    }
+
+    #welcome-section p {
+        font-size: 1em;
+    }
+
+    #projects h2 {
+        font-size: 1.8em;
+    }
+
+    .project-tile h3 {
+        font-size: 1.4em;
+    }
+
+    .project-tile p {
+        font-size: 1em;
+    }
+
+    #certifications h2 {
+        font-size: 1.8em;
+    }
+
+    #certifications li {
+        font-size: 1em;
+    }
+
+    .profile-picture {
+        max-width: 80%; /* Further adjustment for mobile screens */
+    }
 }
