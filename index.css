@@ -16,16 +16,17 @@ body {
 #navbar {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background-color: #333;
     color: white;
     padding: 10px 0;
     z-index: 10;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Allows navbar links to wrap on smaller screens */
+    flex-wrap: wrap; /* Allow navbar links to wrap on smaller screens */
+    box-sizing: border-box;
 }
 
 #navbar a {
@@ -49,16 +50,16 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 20px;
-    margin-top: 60px; /* To account for the fixed navbar */
+    margin-top: 80px; /* Increased space to account for the fixed navbar */
 }
 
 #welcome-section h1 {
-    font-size: 3em;
+    font-size: 2.5em; /* Adjust font size */
     margin-bottom: 10px;
 }
 
 #welcome-section p {
-    font-size: 1.5em;
+    font-size: 1.3em;
     margin-top: 20px;
 }
 
@@ -114,34 +115,13 @@ body {
     font-size: 1.5em;
 }
 
-/* Certifications Section */
-#certifications {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #ffffff;
-}
-
-#certifications h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-#certifications ul {
-    list-style: none;
-}
-
-#certifications li {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-}
-
 /* Profile Picture */
 .profile-picture {
-    max-width: 400px;
+    max-width: 400px; /* Limit image size */
     height: auto;
     margin: 20px auto;
     display: block;
-    border-radius: 50%;
+    border-radius: 50%; /* Optional: Makes the image circular */
 }
 
 /* Media Queries for Smaller Screens */
@@ -149,20 +129,21 @@ body {
     #navbar {
         flex-direction: column;
         padding-top: 20px;
-        align-items: center; /* Center navbar items on smaller screens */
+        align-items: center;
+        gap: 10px; /* Reduce gap between links */
     }
 
     #navbar a {
-        margin-bottom: 10px; /* Add space between links */
-        font-size: 1em; /* Adjust font size for smaller screens */
+        margin-bottom: 5px;
+        font-size: 1em;
     }
 
     #welcome-section h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 
     #welcome-section p {
-        font-size: 1.2em;
+        font-size: 1.1em;
     }
 
     #projects h2 {
@@ -177,31 +158,31 @@ body {
         font-size: 1em;
     }
 
-    #certifications h2 {
+    #contact h2 {
         font-size: 2em;
     }
 
-    #certifications li {
-        font-size: 1.1em;
-    }
-
     .profile-picture {
-        max-width: 90%;
+        max-width: 90%; /* Adjust size for smaller screens */
     }
 }
 
 /* Mobile Screen Sizes */
 @media (max-width: 600px) {
     #navbar {
-        padding-top: 10px;
+        padding-top: 15px;
     }
 
     #navbar a {
         font-size: 1em;
     }
 
+    #welcome-section {
+        margin-top: 120px; /* Adjust for the fixed navbar */
+    }
+
     #welcome-section h1 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     #welcome-section p {
@@ -220,12 +201,8 @@ body {
         font-size: 1em;
     }
 
-    #certifications h2 {
+    #contact h2 {
         font-size: 1.8em;
-    }
-
-    #certifications li {
-        font-size: 1em;
     }
 
     .profile-picture {
